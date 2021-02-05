@@ -1,0 +1,8 @@
+[ENABLE]
+//hooks SAgent::PacketSystem
+00411773:
+je 00411793
+
+[DISABLE]
+00411773:
+je 0041177A

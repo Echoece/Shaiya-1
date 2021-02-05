@@ -3,7 +3,7 @@ alloc(newmem,128)
 label(return)
 //hooks CUser::ChkPasswd
 newmem:
-push ebx
+pushad
 _uid:
 mov bl,[edi] //szName
 cmp bl,00
@@ -37,7 +37,7 @@ inc eax
 jmp _pwd
 
 _exit:
-pop ebx
+popad
 //original code
 call 00406A30 //GetUser
 jmp return

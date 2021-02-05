@@ -8,7 +8,8 @@ GO
 SET QUOTED_IDENTIFIER ON 
 GO
 
-CREATE PROCEDURE [dbo].[usp_Read_User_CashPoint_UsersMaster]  
+CREATE Proc [dbo].[usp_Read_User_CashPoint_UsersMaster]  
+
 @CashPoint int OUTPUT,
 @UserUID int
 
@@ -19,6 +20,7 @@ SET NOCOUNT ON
 SET @CashPoint = 0
 
 SELECT @CashPoint = ISNULL(Point, 0) FROM PS_UserData.dbo.Users_Master WHERE UserUID = @UserUID 
+
 IF @CashPoint < 0
 BEGIN
 	UPDATE PS_UserData.dbo.Users_Master SET Point = 0 WHERE UserUID = @UserUID
