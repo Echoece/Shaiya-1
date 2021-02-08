@@ -1,40 +1,32 @@
 #include "pch.h"
 
-BOOL isElementalGem(ULONG_PTR& pVector) {
-	auto itFire = std::find(std::begin(vFireGems), std::end(vFireGems), pVector);
-	if (itFire != std::end(vFireGems)) {
+BOOL isElementalGem(DWORD& pVector) {
+	if (bool isFire = std::find(vFireGems.begin(), vFireGems.end(), pVector) != vFireGems.end()) {
 		return FIRE;
 	}
-	auto itWater = std::find(std::begin(vWaterGems), std::end(vWaterGems), pVector);
-	if (itWater != std::end(vWaterGems)) {
+	if (bool isWater = std::find(vWaterGems.begin(), vWaterGems.end(), pVector) != vWaterGems.end()) {
 		return WATER;
 	}
-	auto itEarth = std::find(std::begin(vEarthGems), std::end(vEarthGems), pVector);
-	if (itEarth != std::end(vEarthGems)) {
+	if (bool isEarth = std::find(vEarthGems.begin(), vEarthGems.end(), pVector) != vEarthGems.end()) {
 		return EARTH;
 	}
-	auto itWind = std::find(std::begin(vWindGems), std::end(vWindGems), pVector);
-	if (itWind != std::end(vWindGems)) {
+	if (bool isWind = std::find(vWindGems.begin(), vWindGems.end(), pVector) != vWindGems.end()) {
 		return WIND;
 	}
 	return FALSE;
 }
 
-BOOL isElementalItem(ULONG_PTR& pArray) {
-	auto itFire = std::find(std::begin(aFireItems), std::end(aFireItems), pArray);
-	if (itFire != std::end(aFireItems)) {
+BOOL isElementalItem(DWORD& pArray) {
+	if (bool isFire = std::find(aFireItems.begin(), aFireItems.end(), pArray) != aFireItems.end()) {
 		return FIRE;
 	}
-	auto itWater = std::find(std::begin(aWaterItems), std::end(aWaterItems), pArray);
-	if (itWater != std::end(aWaterItems)) {
+	if (bool isWater = std::find(aWaterItems.begin(), aWaterItems.end(), pArray) != aWaterItems.end()) {
 		return WATER;
 	}
-	auto itEarth = std::find(std::begin(aEarthItems), std::end(aEarthItems), pArray);
-	if (itEarth != std::end(aEarthItems)) {
+	if (bool isEarth = std::find(aEarthItems.begin(), aEarthItems.end(), pArray) != aEarthItems.end()) {
 		return EARTH;
 	}
-	auto itWind = std::find(std::begin(aWindItems), std::end(aWindItems), pArray);
-	if (itWind != std::end(aWindItems)) {
+	if (bool isWind = std::find(aWindItems.begin(), aWindItems.end(), pArray) != aWindItems.end()) {
 		return WIND;
 	}
 	return FALSE;

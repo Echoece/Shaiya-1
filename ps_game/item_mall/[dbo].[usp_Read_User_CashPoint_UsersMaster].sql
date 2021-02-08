@@ -1,6 +1,5 @@
 USE [PS_GameData]
 GO
-
 /****** Object:  StoredProcedure [dbo].[usp_Read_User_CashPoint_UsersMaster]    Script Date: 1/12/2021 12:15:09 AM ******/
 SET ANSI_NULLS ON
 GO
