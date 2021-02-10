@@ -14,8 +14,8 @@ Napi::Value userCount(const Napi::CallbackInfo& info) {
   Napi::Env env = info.Env();
 
   UINT lpBuffer;
-  if (BOOL b = ReadProcessMemoryEx("ps_game.exe", (LPVOID)0x109E6F8, &lpBuffer, 4) == FALSE) {
-    return Napi::Boolean::New(env, b);
+  if (!ReadProcessMemoryEx("ps_game.exe", (LPVOID)0x109E6F8, &lpBuffer, 4)) {
+    return Napi::Boolean::New(env, FALSE);
   }
 
   return Napi::Value::From(env, lpBuffer);
@@ -34,12 +34,12 @@ Napi::Boolean blessOfGoddess(const Napi::CallbackInfo& info) {
 
   UINT lpBuffer = info[0].As<Napi::Number>().Uint32Value();
 
-  if (BOOL b = WriteProcessMemoryEx("ps_game.exe", (LPVOID)0x10A2264, &lpBuffer, 4) == FALSE) {
-    return Napi::Boolean::New(env, b);
+  if (!WriteProcessMemoryEx("ps_game.exe", (LPVOID)0x10A2264, &lpBuffer, 4)) {
+    return Napi::Boolean::New(env, FALSE);
   }
 
-  if (BOOL b = WriteProcessMemoryEx("ps_game.exe", (LPVOID)0x10A22E8, &lpBuffer, 4) == FALSE) {
-    return Napi::Boolean::New(env, b);
+  if (!WriteProcessMemoryEx("ps_game.exe", (LPVOID)0x10A22E8, &lpBuffer, 4)) {
+    return Napi::Boolean::New(env, FALSE);
   }
 
   return Napi::Boolean::New(env, TRUE);
