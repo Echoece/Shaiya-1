@@ -53,4 +53,4 @@ client.once("ready", () => {
     addon.setSeDebugPrivilege()
 })
 
-client.login("Njc3NDA5MzIwNTAxMjQ4MDUx.XkT0lw.h7gzRzFgjimpmY1foIctDekJR78")
+client.login("BOT_TOKEN")

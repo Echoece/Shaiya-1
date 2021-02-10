@@ -19,63 +19,31 @@ int GetQuestReward(LPVOID pUser, UINT16 wQuestId, UINT8 cIndex) {
 	}
 
 	else if (cIndex == 3) {
-		try {
-			GetPrivateProfileStringA(sQuestId.c_str(), "Gold3", "", cGold, 32, szIniPath);
-			uGold = std::stoi(cGold);
+		GetPrivateProfileStringA(sQuestId.c_str(), "Gold3", "", cGold, 32, szIniPath);
+		uGold = std::atoi(cGold); 
 
-			GetPrivateProfileStringA(sQuestId.c_str(), "Exp3", "", cExp, 32, szIniPath);
-			uExp = std::stoi(cExp);
-		}
-		catch (std::invalid_argument) {
-			uGold, uExp = 0;
-		}
-		catch (std::out_of_range) {
-			uGold, uExp = 0;
-		}
+		GetPrivateProfileStringA(sQuestId.c_str(), "Exp3", "", cExp, 32, szIniPath);
+		uExp = std::atoi(cExp);
 	}
 
 	else if (cIndex == 4) {
-		try {
-			GetPrivateProfileStringA(sQuestId.c_str(), "Gold4", "", cGold, 32, szIniPath);
-			uGold = std::stoi(cGold);
+		GetPrivateProfileStringA(sQuestId.c_str(), "Gold4", "", cGold, 32, szIniPath);
+		uGold = std::atoi(cGold);
 
-			GetPrivateProfileStringA(sQuestId.c_str(), "Exp4", "", cExp, 32, szIniPath);
-			uExp = std::stoi(cExp);
-		}
-		catch (std::invalid_argument) {
-			uGold, uExp = 0;
-		}
-		catch (std::out_of_range) {
-			uGold, uExp = 0;
-		}
+		GetPrivateProfileStringA(sQuestId.c_str(), "Exp4", "", cExp, 32, szIniPath);
+		uExp = std::atoi(cExp);
 	}
 
 	else if (cIndex == 5) {
-		try {
-			GetPrivateProfileStringA(sQuestId.c_str(), "Gold5", "", cGold, 32, szIniPath);
-			uGold = std::stoi(cGold);
+		GetPrivateProfileStringA(sQuestId.c_str(), "Gold5", "", cGold, 32, szIniPath);
+		uGold = std::atoi(cGold);
 
-			GetPrivateProfileStringA(sQuestId.c_str(), "Exp5", "", cExp, 32, szIniPath);
-			uExp = std::stoi(cExp);
-		}
-		catch (std::invalid_argument) {
-			uGold, uExp = 0;
-		}
-		catch (std::out_of_range) {
-			uGold, uExp = 0;
-		}
+		GetPrivateProfileStringA(sQuestId.c_str(), "Exp5", "", cExp, 32, szIniPath);
+		uExp = std::atoi(cExp);
 	}
 
-	try {
-		GetPrivateProfileStringA(sQuestId.c_str(), sIndex.c_str(), "", cItemId, 32, szIniPath);
-		uItemId = std::stoi(cItemId);
-	}
-	catch (std::invalid_argument) {
-		uItemId = 0;
-	}
-	catch (std::out_of_range) {
-		uItemId = 0;
-	}
+	GetPrivateProfileStringA(sQuestId.c_str(), sIndex.c_str(), "", cItemId, 32, szIniPath);
+	uItemId = std::atoi(cItemId);
 
 	int nType = uItemId / 1000;
 	int nTypeId = uItemId % 1000;

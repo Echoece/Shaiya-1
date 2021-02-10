@@ -24,8 +24,9 @@ module.exports = {
         }
         if (argv[0] === "enable") {
             try {
+                await addon.blessOfGoddess(6000);
                 exec("agent.exe", ["/enablekill"])
-                message.channel.send("`Bless enabled`")
+                message.channel.send("`Enabled Bless of Goddess`")
             }
             catch (error) {
                 console.log(error)
@@ -34,8 +35,9 @@ module.exports = {
         }
         else if (argv[0] === "disable") {
             try {
+                await addon.blessOfGoddess(12000);
                 exec("agent.exe", ["/disablekill"])
-                message.channel.send("`Bless disabled`")
+                message.channel.send("`Disabled Bless of Goddess`")
             }
             catch (error) {
                 console.log(error)

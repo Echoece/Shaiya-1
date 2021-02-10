@@ -1,32 +1,32 @@
 #include "pch.h"
 
 BOOL isElementalGem(DWORD& pVector) {
-	if (bool isFire = std::find(vFireGems.begin(), vFireGems.end(), pVector) != vFireGems.end()) {
+	if (std::find(vFireGems.begin(), vFireGems.end(), pVector) != vFireGems.end()) {
 		return FIRE;
 	}
-	if (bool isWater = std::find(vWaterGems.begin(), vWaterGems.end(), pVector) != vWaterGems.end()) {
+	if (std::find(vWaterGems.begin(), vWaterGems.end(), pVector) != vWaterGems.end()) {
 		return WATER;
 	}
-	if (bool isEarth = std::find(vEarthGems.begin(), vEarthGems.end(), pVector) != vEarthGems.end()) {
+	if (std::find(vEarthGems.begin(), vEarthGems.end(), pVector) != vEarthGems.end()) {
 		return EARTH;
 	}
-	if (bool isWind = std::find(vWindGems.begin(), vWindGems.end(), pVector) != vWindGems.end()) {
+	if (std::find(vWindGems.begin(), vWindGems.end(), pVector) != vWindGems.end()) {
 		return WIND;
 	}
 	return FALSE;
 }
 
 BOOL isElementalItem(DWORD& pArray) {
-	if (bool isFire = std::find(aFireItems.begin(), aFireItems.end(), pArray) != aFireItems.end()) {
+	if (std::find(aFireItems.begin(), aFireItems.end(), pArray) != aFireItems.end()) {
 		return FIRE;
 	}
-	if (bool isWater = std::find(aWaterItems.begin(), aWaterItems.end(), pArray) != aWaterItems.end()) {
+	if (std::find(aWaterItems.begin(), aWaterItems.end(), pArray) != aWaterItems.end()) {
 		return WATER;
 	}
-	if (bool isEarth = std::find(aEarthItems.begin(), aEarthItems.end(), pArray) != aEarthItems.end()) {
+	if (std::find(aEarthItems.begin(), aEarthItems.end(), pArray) != aEarthItems.end()) {
 		return EARTH;
 	}
-	if (bool isWind = std::find(aWindItems.begin(), aWindItems.end(), pArray) != aWindItems.end()) {
+	if (std::find(aWindItems.begin(), aWindItems.end(), pArray) != aWindItems.end()) {
 		return WIND;
 	}
 	return FALSE;

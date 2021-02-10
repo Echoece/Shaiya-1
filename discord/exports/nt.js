@@ -4,7 +4,7 @@ const roleId = "808120572486877234"
 
 module.exports = {
     name: "nt",
-    async execute(message, argv) {
+    execute(message, argv) {
         if (message.guild === null) {
             return
         }
